@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Navbar = () => {
     return (
         <nav className="bg-white shadow-sm">
             <div className="container-fluid flex items-center justify-between py-3 px-4">
@@ -26,4 +26,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;
