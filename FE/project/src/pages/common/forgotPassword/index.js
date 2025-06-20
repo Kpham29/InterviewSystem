@@ -1,0 +1,55 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { ROUTERS } from "../../../utils/routers";
+
+const ForgotPassword = () => {
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(ROUTERS.COMMON.RESET_PASSWORD);
+  };
+  const handleBack = (e) => {
+    e.preventDefault();
+    navigate(ROUTERS.COMMON.LOGIN);
+  };
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white shadow-md p-8 rounded-md w-full max-w-lg">
+        <h1 className="text-[20px] font-bold text-center mb-6 uppercase text-[#1c1c1c]">
+          IMS Recruitment
+        </h1>
+        <p className="text-center mt-3 mb-3">
+          Please enter your email to get a link to reset password{" "}
+        </p>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4 flex items-center">
+            <label className="block font-medium w-1/3 text-[14px] text-center">
+              Email
+            </label>
+            <input
+              type="email"
+              className="w-2/3 px-3 py-2 border border-gray-300 bg-gray-200 rounded-md focus:outline-none"
+              required
+            />
+          </div>
+          <div className="flex items-center justify-center">
+            <button
+              type="submit"
+              className="text-[14px] text-[#ffffff] uppercase font-bold bg-[#008874] rounded-[4px] h-[46px] w-[150px] cursor-pointer border-none mr-8"
+            >
+              Send
+            </button>
+            <button
+              className="text-[14px] text-[#ffffff] uppercase font-bold bg-red-600 rounded-[4px] h-[46px] w-[150px] cursor-pointer border-none"
+              onClick={handleBack}
+            >
+              Back to login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default ForgotPassword;

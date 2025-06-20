@@ -6,12 +6,17 @@ import { ROUTERS } from "../utils/routers";
 
 const MasterLayout = ({ children, ...props }) => {
   const location = useLocation();
-  const isLoginPage = location.pathname.match(ROUTERS.COMMON.LOGIN);
+  const paths = [
+    ROUTERS.COMMON.RESET_PASSWORD,
+    ROUTERS.COMMON.FORGOT_PASSWORD,
+    ROUTERS.COMMON.LOGIN,
+  ];
+  const isCommonPage = paths.includes(location.pathname);
   return (
     <div {...props}>
-      {!isLoginPage && <Header />}
+      {!isCommonPage && <Header />}
       {children}
-      {!isLoginPage && <Footer />}
+      {!isCommonPage && <Footer />}
     </div>
   );
 };
