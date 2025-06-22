@@ -9,6 +9,17 @@ import UserList from "./pages/user/userlist/user";
 import UserDetails from "./pages/user/userlist/detail";
 import UserEdit from "./pages/user/userlist/edit";
 import CreateUser from "./pages/user/userlist/create";
+import InterviewSchedule from "./pages/common/interview/interviewschedule";
+import CreateInterviewSchedule from "./pages/common/interview/create";
+import ViewInterviewSchedule from "./pages/common/interview/details";
+import ViewInterviewDetail from "./pages/common/interview/details";
+import CancelInterviewSchedule from "./pages/common/interview/cancel";
+import SubmitInterviewResult from "./pages/common/interview/submit";
+import InterviewList from "./pages/common/interview/interviewschedule";
+import InterviewDetails from "./pages/common/interview/details";
+import CreateInterview from "./pages/common/interview/create";
+import EditInterview from "./pages/common/interview/edit";
+import SendInterviewReminder from "./pages/common/interview/reminder";
 
 const renderRouter = () => {
   const routers = [
@@ -44,6 +55,35 @@ const renderRouter = () => {
       path: ROUTERS.USER.USER_CREATE,
       component: <CreateUser/>,
     },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_SCHEDULE,
+      component: <InterviewList/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_CREATE,
+      component: <CreateInterview/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_DETAILS,
+      component: <InterviewDetails/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_EDIT,
+      component: <EditInterview/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_SUBMIT,
+      component: <SubmitInterviewResult/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_CANCEL,
+      component: <CancelInterviewSchedule/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_REMINDER,
+      component: <SendInterviewReminder/>,
+    },
+
   ];
   return (
     <MasterLayout>
