@@ -8,7 +8,11 @@ export const ROUTERS = {
     RESET_PASSWORD: "/reset-password",
   },
   USER: {
-    USER_LIST: "/user",
-    USER_DETAILS: "/detail",
+    USER_LIST: "/user-list",
+    USER_DETAILS: "/user-details",
+    USER_EDIT: "/user-edit",
+    USER_CREATE: "/user-create",
+
+
   }
 };
