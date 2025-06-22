@@ -20,6 +20,10 @@ import InterviewDetails from "./pages/common/interview/details";
 import CreateInterview from "./pages/common/interview/create";
 import EditInterview from "./pages/common/interview/edit";
 import SendInterviewReminder from "./pages/common/interview/reminder";
+import ViewOfferList from "./pages/offer/list";
+import CreateNewOffer from "./pages/offer/create";
+import EditOffer from "./pages/offer/edit";
+import OfferDetails from "./pages/offer/detail";
 
 const renderRouter = () => {
   const routers = [
@@ -82,6 +86,22 @@ const renderRouter = () => {
     {
       path: ROUTERS.INTERVIEW.INTERVIEW_REMINDER,
       component: <SendInterviewReminder/>,
+    },
+    {
+      path: ROUTERS.OFFER.OFFER_LIST,
+      component: <ViewOfferList/>,
+    },
+    {
+      path: ROUTERS.OFFER.OFFER_CREATE,
+      component: <CreateNewOffer/>,
+    },
+    {
+      path: ROUTERS.OFFER.OFFER_EDIT,
+      component: <EditOffer/>,
+    },
+    {
+      path: ROUTERS.OFFER.OFFER_DETAIL,
+      component: <OfferDetails/>,
     },
 
   ];
