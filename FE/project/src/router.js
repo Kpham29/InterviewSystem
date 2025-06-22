@@ -6,6 +6,7 @@ import Login from "./pages/common/login";
 import ForgotPassword from "./pages/common/forgotPassword";
 import ResetPassword from "./pages/common/resetPassword";
 import UserList from "./pages/user/userlist/user";
+import UserDetails from "./pages/user/userlist/detail";
 
 const renderRouter = () => {
   const routers = [
@@ -29,6 +30,11 @@ const renderRouter = () => {
       path: ROUTERS.USER.USER_LIST,
       component: <UserList />,
     },
+    {
+      path: ROUTERS.USER.USER_DETAILS,
+      component: <UserDetails />,
+    },
+
 
   ];
   return (

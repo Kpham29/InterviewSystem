@@ -9,5 +9,6 @@ export const ROUTERS = {
   },
   USER: {
     USER_LIST: "/user",
+    USER_DETAILS: "/detail",
   }
 };
