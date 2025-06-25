@@ -12,7 +12,15 @@ export const ROUTERS = {
     USER_DETAILS: "/user-details",
     USER_EDIT: "/user-edit",
     USER_CREATE: "/user-create",
-
+  },
+  INTERVIEW:{
+    INTERVIEW_SCHEDULE:"/interview-list",
+    INTERVIEW_CREATE:"/interview-create",
+    INTERVIEW_DETAILS:"/interview-details",
+    INTERVIEW_EDIT:"/interview-edits",
+    INTERVIEW_SUBMIT:"/interview-submit",
+    INTERVIEW_CANCEL:"/interview-cancel",
+    INTERVIEW_REMINDER:"/interview-remind",
 
   }
 };
