@@ -1,13 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTERS } from "../../../utils/routers";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate(ROUTERS.COMMON.RESET_PASSWORD);
+
+    try {
+      const response = await fetch(
+        "http://localhost:8080/api/forgot-password",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("A reset link has been sent to your email.");
+      } else {
+        alert("Email not found!");
+      }
+    } catch (error) {
+      alert("Server error. Please try again later.");
+      console.error("Forgot password error:", error);
+    }
   };
+
   const handleBack = (e) => {
     e.preventDefault();
     navigate(ROUTERS.COMMON.LOGIN);
@@ -30,6 +56,8 @@ const ForgotPassword = () => {
               type="email"
               className="w-2/3 px-3 py-2 border border-gray-300 bg-gray-200 rounded-md focus:outline-none"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="flex items-center justify-center">
