@@ -1,4 +1,5 @@
 import UserList from "../pages/user/userlist/user";
+import ViewOfferList from "../pages/offer/list";
 
 export const ROUTERS = {
   COMMON: {
@@ -21,6 +22,14 @@ export const ROUTERS = {
     INTERVIEW_SUBMIT:"/interview-submit",
     INTERVIEW_CANCEL:"/interview-cancel",
     INTERVIEW_REMINDER:"/interview-remind",
+
+  },
+  OFFER:{
+    OFFER_LIST:"offer-list",
+    OFFER_CREATE:"offer-create",
+    OFFER_EDIT:"offer-edit",
+    OFFER_DETAIL:"offer-detail",
+
 
   }
 };
