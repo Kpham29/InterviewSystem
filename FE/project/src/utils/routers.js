@@ -1,18 +1,17 @@
-import UserList from "../pages/user/userlist/user";
-import ViewOfferList from "../pages/offer/list";
-
 export const ROUTERS = {
   COMMON: {
     HOME: "/",
     LOGIN: "/login",
     FORGOT_PASSWORD: "/forgot-password",
     RESET_PASSWORD: "/reset-password",
+    CANDIDATE_LIST: "/candidate-list",
+    CANDIDATE_CREATE: "/candidate-create",
   },
-  USER: {
-    USER_LIST: "/user-list",
-    USER_DETAILS: "/user-details",
-    USER_EDIT: "/user-edit",
-    USER_CREATE: "/user-create",
+  ADMIN: {
+    USER_LIST: "/admin/user-list",
+    USER_DETAILS: "/admin/user-details",
+    USER_EDIT: "/admin/user-edit",
+    USER_CREATE: "/admin/user-create",
   },
   INTERVIEW:{
     INTERVIEW_SCHEDULE:"/interview-list",
@@ -29,7 +28,5 @@ export const ROUTERS = {
     OFFER_CREATE:"offer-create",
     OFFER_EDIT:"offer-edit",
     OFFER_DETAIL:"offer-detail",
-
-
   }
 };
