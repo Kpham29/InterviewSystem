@@ -9,6 +9,21 @@ import UserList from "./pages/admin/listUserAccount";
 import UserDetails from "./pages/admin/detailUserAccount";
 import CreateUser from "./pages/admin/createUserAccount";
 import UserEdit from "./pages/admin/editUserAccount";
+import InterviewSchedule from "./pages/common/interview/interviewschedule";
+import CreateInterviewSchedule from "./pages/common/interview/create";
+import ViewInterviewSchedule from "./pages/common/interview/details";
+import ViewInterviewDetail from "./pages/common/interview/details";
+import CancelInterviewSchedule from "./pages/common/interview/cancel";
+import SubmitInterviewResult from "./pages/common/interview/submit";
+import InterviewList from "./pages/common/interview/interviewschedule";
+import InterviewDetails from "./pages/common/interview/details";
+import CreateInterview from "./pages/common/interview/create";
+import EditInterview from "./pages/common/interview/edit";
+import SendInterviewReminder from "./pages/common/interview/reminder";
+import ViewOfferList from "./pages/offer/list";
+import CreateNewOffer from "./pages/offer/create";
+import EditOffer from "./pages/offer/edit";
+import OfferDetails from "./pages/offer/detail";
 
 const renderRouter = () => {
   const routers = [
@@ -44,6 +59,51 @@ const renderRouter = () => {
       path: ROUTERS.ADMIN.USER_CREATE,
       component: <CreateUser />,
     },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_SCHEDULE,
+      component: <InterviewList/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_CREATE,
+      component: <CreateInterview/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_DETAILS,
+      component: <InterviewDetails/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_EDIT,
+      component: <EditInterview/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_SUBMIT,
+      component: <SubmitInterviewResult/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_CANCEL,
+      component: <CancelInterviewSchedule/>,
+    },
+    {
+      path: ROUTERS.INTERVIEW.INTERVIEW_REMINDER,
+      component: <SendInterviewReminder/>,
+    },
+    {
+      path: ROUTERS.OFFER.OFFER_LIST,
+      component: <ViewOfferList/>,
+    },
+    {
+      path: ROUTERS.OFFER.OFFER_CREATE,
+      component: <CreateNewOffer/>,
+    },
+    {
+      path: ROUTERS.OFFER.OFFER_EDIT,
+      component: <EditOffer/>,
+    },
+    {
+      path: ROUTERS.OFFER.OFFER_DETAIL,
+      component: <OfferDetails/>,
+    },
+
   ];
   return (
     <MasterLayout>

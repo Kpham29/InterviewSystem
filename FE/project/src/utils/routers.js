@@ -13,4 +13,20 @@ export const ROUTERS = {
     USER_EDIT: "/admin/user-edit",
     USER_CREATE: "/admin/user-create",
   },
+  INTERVIEW:{
+    INTERVIEW_SCHEDULE:"/interview-list",
+    INTERVIEW_CREATE:"/interview-create",
+    INTERVIEW_DETAILS:"/interview-details",
+    INTERVIEW_EDIT:"/interview-edits",
+    INTERVIEW_SUBMIT:"/interview-submit",
+    INTERVIEW_CANCEL:"/interview-cancel",
+    INTERVIEW_REMINDER:"/interview-remind",
+
+  },
+  OFFER:{
+    OFFER_LIST:"offer-list",
+    OFFER_CREATE:"offer-create",
+    OFFER_EDIT:"offer-edit",
+    OFFER_DETAIL:"offer-detail",
+  }
 };
