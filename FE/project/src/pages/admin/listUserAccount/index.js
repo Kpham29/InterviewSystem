@@ -9,27 +9,44 @@ const UserList = () => {
   const [error, setError] = useState(null); // Thêm trạng thái lỗi
 
   useEffect(() => {
-    // Gọi API khi component được mount
     const fetchUsers = async () => {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        setError("Token is missing. Please login again.");
+        setLoading(false);
+        return; // Không gọi API nếu không có token
+      }
+
       try {
-        const response = await axios.get("http://localhost:8080/api/users");
-        setUsers(response.data); // Gán dữ liệu lấy về từ API vào state
+        const response = await axios.get("http://localhost:8080/api/users", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setUsers(response.data);
+
       } catch (error) {
         console.error("Error response:", error.response);
-        setError(error.response?.data?.message || "Unable to fetch users.");
-         // Cập nhật trạng thái lỗi
+        setError(
+            error.response?.data?.message ||
+            (error.response?.status === 403
+                ? "You do not have permission."
+                : "Unable to fetch users.")
+        );
       } finally {
-        setLoading(false); // Tắt trạng thái loading
+        setLoading(false);
       }
     };
+
     fetchUsers();
   }, []);
 
-  const filteredUsers = users.filter(
-      (user) =>
-          (user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              user.email.toLowerCase().includes(searchTerm.toLowerCase())) &&
-          (statusFilter === "" || user.status === statusFilter)
+
+  const filteredUsers = users.filter((user) =>
+      (user?.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          user?.email?.toLowerCase().includes(searchTerm.toLowerCase())) &&
+      (statusFilter === "" || user.status === statusFilter)
   );
 
   const handleAction = (userId, action) => {
