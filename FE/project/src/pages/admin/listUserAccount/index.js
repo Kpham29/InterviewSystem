@@ -15,8 +15,9 @@ const UserList = () => {
         const response = await axios.get("http://localhost:8080/api/users");
         setUsers(response.data); // Gán dữ liệu lấy về từ API vào state
       } catch (error) {
-        console.error("Error fetching users:", error);
-        setError("Unable to fetch users."); // Cập nhật trạng thái lỗi
+        console.error("Error response:", error.response);
+        setError(error.response?.data?.message || "Unable to fetch users.");
+         // Cập nhật trạng thái lỗi
       } finally {
         setLoading(false); // Tắt trạng thái loading
       }
