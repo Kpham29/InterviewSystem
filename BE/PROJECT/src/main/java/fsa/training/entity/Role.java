@@ -1,13 +1,19 @@
 package fsa.training.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int roleId;
     @Column(nullable = false, unique = true)
+    @Setter
+    @Getter
     private String roleName;
 
     public Role() {
@@ -18,19 +24,6 @@ public class Role {
         this.roleName = roleName;
     }
 
-    public int getRoleId() {
-        return roleId;
-    }
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
 
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
 }

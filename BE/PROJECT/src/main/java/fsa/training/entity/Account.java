@@ -21,18 +21,26 @@ public class Account {
     @Column(nullable = false)
     private String password;
 
+    @Getter
+    @Setter
     @Column(nullable = false, unique = true)
     private String email;
 
     @Getter
     @Setter
-    @ManyToOne @JoinColumn(name = "roleId")
+    @ManyToOne @JoinColumn(name = "role_Id")
     private Role role;
 
+    @Getter
+    @Setter
     private Boolean isActive = true;
 
+    @Getter
+    @Setter
     private LocalDateTime createdAt;
 
+    @Getter
+    @Setter
     @OneToOne(mappedBy = "account", cascade = CascadeType.ALL)
     private User user;
 }

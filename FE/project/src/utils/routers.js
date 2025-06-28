@@ -9,8 +9,8 @@ export const ROUTERS = {
   },
   ADMIN: {
     USER_LIST: "/admin/user-list",
-    USER_DETAILS: "/admin/user-details",
-    USER_EDIT: "/admin/user-edit",
+    USER_DETAILS: "/admin/user-details/:id",
+    USER_EDIT: "/admin/user-edit/:id",
     USER_CREATE: "/admin/user-create",
   },
   INTERVIEW:{
