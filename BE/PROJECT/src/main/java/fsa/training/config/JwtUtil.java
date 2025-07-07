@@ -10,16 +10,31 @@ import java.util.Date;
 @Component
 public class JwtUtil {
     private final SecretKey secretKey = Keys.hmacShaKeyFor("ims-recruitment-platform-jwt-secret-key!!".getBytes());
-    private final long EXPIRATION = 1000 * 60 * 60; // 1 hour
+    private final long ACCESS_EXPIRATION = 1000 * 60 * 15; // 15 phút
+    private final long REFRESH_EXPIRATION = 1000 * 60 * 60 * 24 * 7; // 7 ngày
 
-    public String generateToken(String username, String role) {
+    public String generateAccessToken(String username, String role) {
         return Jwts.builder()
                 .setSubject(username)
-                .claim("role", role)
+                .claim("role", "ROLE_" + role)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
+                .setExpiration(new Date(System.currentTimeMillis() + ACCESS_EXPIRATION))
                 .signWith(secretKey, SignatureAlgorithm.HS256)
                 .compact();
+    }
+
+
+    public String generateRefreshToken(String username) {
+        return Jwts.builder()
+                .setSubject(username)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + REFRESH_EXPIRATION))
+                .signWith(secretKey, SignatureAlgorithm.HS256)
+                .compact();
+    }
+
+    public Date getRefreshTokenExpiryDate() {
+        return new Date(System.currentTimeMillis() + REFRESH_EXPIRATION);
     }
 
     public Claims extractClaims(String token) throws ExpiredJwtException, MalformedJwtException, SignatureException {

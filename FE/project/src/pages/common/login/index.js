@@ -23,7 +23,8 @@ const Login = () => {
       const result = await response.json();
 
       if (result.success) {
-        localStorage.setItem("token", result.token);
+        localStorage.setItem("accessToken", result.accessToken);
+        localStorage.setItem("refreshToken", result.refreshToken);
         localStorage.setItem("role", result.role);
         localStorage.setItem("username", username);
         navigate(ROUTERS.COMMON.HOME);

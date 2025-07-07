@@ -4,6 +4,7 @@ import Footer from "../component/footer";
 
 import { ROUTERS } from "../utils/routers";
 import Sidebar from "../component/Sidebar/sidebar";
+import Navbar from "../component/Navbar/navbar";
 
 const MasterLayout = ({ children, ...props }) => {
   const location = useLocation();
@@ -25,6 +26,7 @@ const MasterLayout = ({ children, ...props }) => {
           !isCommonPage ? `content ${isCollapsed ? "collapsed" : ""}` : ""
         }`}
       >
+        {!isCommonPage && <Navbar />}
         <main className="flex-1">{children}</main>
         {!isCommonPage && <Footer />}
       </div>

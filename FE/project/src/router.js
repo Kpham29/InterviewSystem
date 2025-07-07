@@ -24,6 +24,8 @@ import ViewOfferList from "./pages/offer/list";
 import CreateNewOffer from "./pages/offer/create";
 import EditOffer from "./pages/offer/edit";
 import OfferDetails from "./pages/offer/detail";
+import CandidateList from "./pages/common/candidateList";
+import CreateCandidate from "./pages/common/createCandidate";
 
 const renderRouter = () => {
   const routers = [
@@ -61,49 +63,56 @@ const renderRouter = () => {
     },
     {
       path: ROUTERS.INTERVIEW.INTERVIEW_SCHEDULE,
-      component: <InterviewList/>,
+      component: <InterviewList />,
     },
     {
       path: ROUTERS.INTERVIEW.INTERVIEW_CREATE,
-      component: <CreateInterview/>,
+      component: <CreateInterview />,
     },
     {
       path: ROUTERS.INTERVIEW.INTERVIEW_DETAILS,
-      component: <InterviewDetails/>,
+      component: <InterviewDetails />,
     },
     {
       path: ROUTERS.INTERVIEW.INTERVIEW_EDIT,
-      component: <EditInterview/>,
+      component: <EditInterview />,
     },
     {
       path: ROUTERS.INTERVIEW.INTERVIEW_SUBMIT,
-      component: <SubmitInterviewResult/>,
+      component: <SubmitInterviewResult />,
     },
     {
       path: ROUTERS.INTERVIEW.INTERVIEW_CANCEL,
-      component: <CancelInterviewSchedule/>,
+      component: <CancelInterviewSchedule />,
     },
     {
       path: ROUTERS.INTERVIEW.INTERVIEW_REMINDER,
-      component: <SendInterviewReminder/>,
+      component: <SendInterviewReminder />,
     },
     {
       path: ROUTERS.OFFER.OFFER_LIST,
-      component: <ViewOfferList/>,
+      component: <ViewOfferList />,
     },
     {
       path: ROUTERS.OFFER.OFFER_CREATE,
-      component: <CreateNewOffer/>,
+      component: <CreateNewOffer />,
     },
     {
       path: ROUTERS.OFFER.OFFER_EDIT,
-      component: <EditOffer/>,
+      component: <EditOffer />,
     },
     {
       path: ROUTERS.OFFER.OFFER_DETAIL,
-      component: <OfferDetails/>,
+      component: <OfferDetails />,
     },
-
+    {
+      path: ROUTERS.COMMON.CANDIDATE_LIST,
+      component: <CandidateList />,
+    },
+    {
+      path: ROUTERS.COMMON.CANDIDATE_CREATE,
+      component: <CreateCandidate />,
+    },
   ];
   return (
     <MasterLayout>

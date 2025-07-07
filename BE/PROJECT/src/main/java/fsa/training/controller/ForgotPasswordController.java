@@ -2,10 +2,8 @@ package fsa.training.controller;
 
 import fsa.training.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -16,8 +14,8 @@ public class ForgotPasswordController {
     private AccountService accountService;
 
     @PostMapping("/forgot-password")
-    public Map<String, Object> forgotPassword(@RequestBody Map<String, String> body) {
-        String email = body.get("email");
-        return accountService.forgotPassword(email);
+    public ResponseEntity<Map<String, Object>> forgotPassword(@RequestParam String email) {
+        Map<String, Object> result = accountService.forgotPassword(email);
+        return ResponseEntity.ok(result);
     }
 }
